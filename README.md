@@ -66,7 +66,7 @@ Iterates over the data structure's registers and returns the estimated cardinali
 
 #### myHll.standardError
 
-Fetch the data structure's constant standard error.
+Fetch the data structure's known standard error.
 
 
 [whitepaper]: http://algo.inria.fr/flajolet/Publications/FlFuGaMe07.pdf
