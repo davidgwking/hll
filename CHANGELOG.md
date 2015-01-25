@@ -1,4 +1,4 @@
-0.0.[2345678] / 2015-01-24
+0.0.[2-8] / 2015-01-24
 ==========================
 * move to native murmurhash3 implementation
 * better error messaging
