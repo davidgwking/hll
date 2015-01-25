@@ -1,8 +1,10 @@
-0.0.3 / 2015-01-24
-==================
+0.0.[234] / 2015-01-24
+=======================
 * move to native murmurhash3 implementation
+* better error messaging
+* readme updates
 
 
-0.0.1 & 0.0.2 / 2015-01-24
-==========================
+0.0.1 / 2015-01-24
+==================
 * initial release

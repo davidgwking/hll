@@ -6,6 +6,7 @@
     "curly": 0,
     "strict": 0,
     "quotes": [2, "single"],
+    "no-multi-spaces": 0,
     "no-use-before-define": 0
   }
 }
