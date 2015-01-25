@@ -56,12 +56,13 @@ describe('hash', function () {
       it('should fetch the distance between the nth bit and the next MSB that holds the value of 1', function () {
         var hashed = hash('test'); // [3] == 1426881896 == 1010101000011000111110101101000 == LSBs
                                    // [0] == 1862463280 == 1101111000000101110111100110000 == MSBs
+        expect(hashed.getDistanceToNext1(0)).to.eql(4);                 // n = 0, next = 4, distance = 4
         expect(hashed.getDistanceToNext1(1)).to.eql(3);                 // n = 1, next = 4, distance = 3
         expect(hashed.getDistanceToNext1(5)).to.eql(1);                 // n = 5, next = 6, distance = 1
         expect(hashed.getDistanceToNext1(6)).to.eql(1);                 // n = 6, next = 7, distance = 1
         expect(hashed.getDistanceToNext1(10)).to.eql(1);                // n = 10, next = 11, distance = 1
         expect(hashed.getDistanceToNext1(32 + 32 + 32 + 5)).to.eql(1);  // n = 101, next = 102, distance = 1
-        expect(hashed.getDistanceToNext1(32 + 32 + 32 + 32)).to.eql(0); // n = 128, next = ?, distance = 0
+        expect(hashed.getDistanceToNext1(32 + 32 + 32 + 32)).to.eql(128); // n = 128, next = ?, distance = 128
       });
 
       it('should return -1 on invalid input', function () {
