@@ -1,4 +1,5 @@
 # hll
+[![Build Status][travis-image]][travis-url]
 
 *hll* implements [HyperLogLog][whitepaper], a near-optimal distinct value (cardinality) estimator.
 
@@ -76,3 +77,5 @@ Fetch the data structure's constant relative error.
 [whitepaper]: http://algo.inria.fr/flajolet/Publications/FlFuGaMe07.pdf
 [nodebuffer]: http://nodejs.org/api/buffer.html
 [murmurhash]: http://en.wikipedia.org/wiki/MurmurHash
+[travis-image]: https://img.shields.io/travis/davidgwking/hll.svg?style=flat&branch=master
+[travis-url]: https://travis-ci.org/davidgwking/hll
