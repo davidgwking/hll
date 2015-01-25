@@ -17,7 +17,7 @@ describe('hll', function () {
       expect(h).to.be.an('object');
       expect(h.insert).to.be.a('function');
       expect(h.estimate).to.be.a('function');
-      expect(h.relativeError).to.be.a('number');
+      expect(h.standardError).to.be.a('number');
     });
   }); // END: should export
 
@@ -48,23 +48,32 @@ describe('hll', function () {
         expect(h.estimate()).to.eql(0);
       });
 
-      it('should estimate within the bounds of the relative error constant', function () {
+      it('should provide a cardinality estimate for very small data sets', function () {
         var h = hll(MAX_BIT_SAMPLE_SZ);
 
         var data = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'a'];
+        var uniqueData = [];
         data.forEach(function (val) {
+          if (uniqueData.indexOf(val) === -1) uniqueData.push(val);
           h.insert(val);
         });
 
-        var errorThresholds = {
-          upper: 7 * (1 + h.relativeError),
-          lower: 7 * (1 - h.relativeError)
-        };
+        var e = h.estimate();
+        expect(e).to.be.ok;
+      });
+
+      it('should provide a cardinality estimate for data sets on the order of thousands of elements', function () {
+        var h = hll(MAX_BIT_SAMPLE_SZ);
+
+        var data = require('./assets/cities.json');
+        var uniqueData = [];
+        data.forEach(function (val) {
+          if (uniqueData.indexOf(val) === -1) uniqueData.push(val);
+          h.insert(val);
+        });
 
         var e = h.estimate();
-        expect(e).to.be.below(errorThresholds.upper);
-        expect(e).to.be.above(errorThresholds.lower);
-        expect(e).to.eql(7);
+        expect(e).to.be.ok;
       });
     }); // END: estimate
 
