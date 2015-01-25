@@ -33,6 +33,15 @@ describe('hll', function () {
         expect(insertion.registerValue).to.eql(2);
       });
 
+      it('should accept empty string inputs', function () {
+        var h = hll(MIN_BIT_SAMPLE_SZ);
+        var insertion = h.insert('');
+        expect(insertion.hash).to.eql([0, 0, 0, 0]);
+        expect(insertion.registerIndex).to.eql(0);
+        expect(insertion.runOfZerosLength).to.eql(4);
+        expect(insertion.registerValue).to.eql(4);
+      });
+
       it('should throw a TypeError on non-string inputs', function () {
         var h = hll(MIN_BIT_SAMPLE_SZ);
         var values = [[], 5, true, {}, null];
