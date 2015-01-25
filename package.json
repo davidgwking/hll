@@ -1,6 +1,6 @@
 {
   "name": "hll",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a hyperloglog implementation for node",
   "license": "MIT",
   "author": "David King <davidgwking@gmail.com>",
@@ -19,7 +19,7 @@
     "url": "http://github.com/davidgwking/hll.git"
   },
   "dependencies": {
-    "murmur": "0.0.2"
+    "murmurhash3": "^0.2.10"
   },
   "devDependencies": {
     "chai": "^1.10.0",

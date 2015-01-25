@@ -27,10 +27,10 @@ describe('hll', function () {
       it('should accept string inputs', function () {
         var h = hll(MIN_BIT_SAMPLE_SZ);
         var insertion = h.insert('test');
-        expect(insertion.hash).to.eql([1958601117, 2893883596, 4189932930, 2584904241]);
-        expect(insertion.registerIndex).to.eql(0);
-        expect(insertion.runOfZerosLength).to.eql(1);
-        expect(insertion.registerValue).to.eql(1);
+        expect(insertion.hash).to.eql([1862463280, 1426881896, 1426881896, 1426881896]);
+        expect(insertion.registerIndex).to.eql(7);
+        expect(insertion.runOfZerosLength).to.eql(2);
+        expect(insertion.registerValue).to.eql(2);
       });
 
       it('should throw a TypeError on non-string inputs', function () {
