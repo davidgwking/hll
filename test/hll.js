@@ -35,7 +35,7 @@ describe('hll', function () {
 
       it('should throw a TypeError on non-string inputs', function () {
         var h = hll(MIN_BIT_SAMPLE_SZ);
-        var values = [new String(''), 5, true, {}, null];
+        var values = [[], 5, true, {}, null];
         values.forEach(function (value) {
           expect(h.insert.bind(null, value)).to.throw(TypeError);
         });

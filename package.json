@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "chai": "^1.10.0",
+    "eslint": "^0.13.0",
     "mocha": "^2.0.1"
   },
   "main": "./lib/hll.js",
@@ -30,6 +31,6 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "eslint lib/**.js test/**.js && mocha"
   }
 }

@@ -35,9 +35,8 @@ describe('hash', function () {
 
     describe('getLSBs', function () {
       it('should return the value of the first n least significant bits', function () {
-        var hashed = hash('test');
-        var value = hashed.value; // [3] == 2584904241 == 10011010000100101000001000110001 == LSBs
-                                  // [0] == 1958601117 == 01110100101111011110000110011101 == MSBs
+        var hashed = hash('test'); // [3] == 2584904241 == 10011010000100101000001000110001 == LSBs
+                                   // [0] == 1958601117 == 01110100101111011110000110011101 == MSBs
         expect(hashed.getLSBs(0)).to.eql(0);              // ? == 0
         expect(hashed.getLSBs(5)).to.eql(17);             // 10001 == 17
         expect(hashed.getLSBs(10)).to.eql(561);           // 1000110001 == 561
@@ -55,9 +54,8 @@ describe('hash', function () {
 
     describe('getDistanceToNext1', function () {
       it('should fetch the distance between the nth bit and the next MSB that holds the value of 1', function () {
-        var hashed = hash('test');
-        var value = hashed.value; // [3] == 2584904241 == 10011010000100101000001000110001 == LSBs
-                                  // [0] == 1958601117 == 01110100101111011110000110011101 == MSBs
+        var hashed = hash('test'); // [3] == 2584904241 == 10011010000100101000001000110001 == LSBs
+                                   // [0] == 1958601117 == 01110100101111011110000110011101 == MSBs
         expect(hashed.getDistanceToNext1(1)).to.eql(4);                 // n = 1, next = 5, distance = 4
         expect(hashed.getDistanceToNext1(5)).to.eql(1);                 // n = 5, next = 6, distance = 1
         expect(hashed.getDistanceToNext1(6)).to.eql(4);                 // n = 6, next = 10, distance = 4
