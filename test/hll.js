@@ -28,7 +28,7 @@ describe('hll', function () {
         var h = hll(MIN_BIT_SAMPLE_SZ);
         var insertion = h.insert('test');
         expect(insertion.hash).to.eql([1862463280, 1426881896, 1426881896, 1426881896]);
-        expect(insertion.registerIndex).to.eql(7);
+        expect(insertion.registerIndex).to.eql(8);
         expect(insertion.runOfZerosLength).to.eql(2);
         expect(insertion.registerValue).to.eql(2);
       });
