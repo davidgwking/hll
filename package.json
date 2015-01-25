@@ -1,0 +1,35 @@
+{
+  "name": "hll",
+  "version": "0.0.1",
+  "description": "a hyperloglog implementation for node",
+  "license": "MIT",
+  "author": "David King <davidgwking@gmail.com>",
+  "maintainers": [
+    "David King <davidgwking@gmail.com>"
+  ],
+  "keywords": [
+    "hll",
+    "loglog",
+    "distinct",
+    "hyperloglog",
+    "cardinality"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/davidgwking/hll.git"
+  },
+  "dependencies": {
+    "murmur": "0.0.2"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.0.1"
+  },
+  "main": "./lib/hll.js",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
