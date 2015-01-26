@@ -5,7 +5,7 @@
 
 With a single parameter, the bit sample size, HyperLogLog boasts an easily derivable memory footprint and known standard error. As you increase the algorithm's memory footprint, the standard error of estimation results decreases dramatically.
 
-This implementation accepts bit sample sizes that fall within the range `[4, 12]`. This allows you to customize the algorithm's standard error between 1.625% and 26%. Each register is an instance of the [Buffer class][nodebuffer].
+This implementation accepts bit sample sizes that fall within the range `[4, 12]`. This allows you to customize the algorithm's standard error between 1.625% and 26%. Each register is an element of the [Buffer class][nodebuffer].
 
 |Bit Sample Size (b) |Number of Registers (m=2^b) |Standard Error (σ=1.04/√m)|
 |--------------------|------------------------|------------------|
