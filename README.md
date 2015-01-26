@@ -58,7 +58,7 @@ Insert a value. This value **must** be a string. Returns a summary of the operat
 
 If unacceptable input is provided, a `TypeError` is thrown.
 
-This implementation uses 128-bit [MurmurHash3][murmurhash], a fast, non-cryptographic hash function.
+This implementation uses 128-bit MurmurHash3, a fast, non-cryptographic hash function.
 
 #### myHll.estimate()
 
@@ -71,6 +71,5 @@ Fetch the data structure's known standard error.
 
 [whitepaper]: http://algo.inria.fr/flajolet/Publications/FlFuGaMe07.pdf
 [nodebuffer]: http://nodejs.org/api/buffer.html
-[murmurhash]: http://en.wikipedia.org/wiki/MurmurHash
 [travis-image]: https://img.shields.io/travis/davidgwking/hll.svg?style=flat&branch=master
 [travis-url]: https://travis-ci.org/davidgwking/hll
