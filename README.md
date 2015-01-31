@@ -5,7 +5,7 @@
 
 With a single parameter, the bit sample size, HyperLogLog boasts an easily derivable memory footprint and known standard error. As you increase the algorithm's memory footprint, the standard error of estimation results decreases dramatically.
 
-This implementation accepts bit sample sizes that fall within the range `[4, 12]`. This allows you to customize the algorithm's standard error between 1.625% and 26%. Each register is an instance of the [Buffer class][nodebuffer].
+This implementation accepts bit sample sizes that fall within the range `[4, 12]`. This allows you to customize the algorithm's standard error between 1.625% and 26%. Each register is an element of the [Buffer class][nodebuffer].
 
 |Bit Sample Size (b) |Number of Registers (m=2^b) |Standard Error (σ=1.04/√m)|
 |--------------------|------------------------|------------------|
@@ -58,7 +58,7 @@ Insert a value. This value **must** be a string. Returns a summary of the operat
 
 If unacceptable input is provided, a `TypeError` is thrown.
 
-This implementation uses 128-bit [MurmurHash3][murmurhash], a fast, non-cryptographic hash function.
+This implementation uses 128-bit MurmurHash3, a fast, non-cryptographic hash function.
 
 #### myHll.estimate()
 
@@ -71,6 +71,5 @@ Fetch the data structure's known standard error.
 
 [whitepaper]: http://algo.inria.fr/flajolet/Publications/FlFuGaMe07.pdf
 [nodebuffer]: http://nodejs.org/api/buffer.html
-[murmurhash]: http://en.wikipedia.org/wiki/MurmurHash
 [travis-image]: https://img.shields.io/travis/davidgwking/hll.svg?style=flat&branch=master
 [travis-url]: https://travis-ci.org/davidgwking/hll
