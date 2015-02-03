@@ -38,8 +38,8 @@ describe('hll', function () {
         var insertion = h.insert('');
         expect(insertion.hash).to.eql([0, 0, 0, 0]);
         expect(insertion.registerIndex).to.eql(0);
-        expect(insertion.runOfZerosLength).to.eql(4);
-        expect(insertion.registerValue).to.eql(4);
+        expect(insertion.runOfZerosLength).to.eql(124);
+        expect(insertion.registerValue).to.eql(124);
       });
 
       it('should throw a TypeError on non-string inputs', function () {
