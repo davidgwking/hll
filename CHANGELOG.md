@@ -1,3 +1,7 @@
+0.0.9 / 2015-01-24
+==========================
+* fix run of zeros implementation
+
 0.0.[2-8] / 2015-01-24
 ==========================
 * move to native murmurhash3 implementation
