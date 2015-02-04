@@ -1,5 +1,6 @@
 # hll
 [![Build Status][travis-image]][travis-url]
+[![NPM][npm-image]][npm-url]
 
 *hll* implements [HyperLogLog][whitepaper], a near-optimal distinct value (cardinality) estimator.
 
@@ -78,3 +79,5 @@ Fetch the data structure's known standard error.
 [nodebuffer]: http://nodejs.org/api/buffer.html
 [travis-image]: https://img.shields.io/travis/davidgwking/hll.svg?style=flat&branch=master
 [travis-url]: https://travis-ci.org/davidgwking/hll
+[npm-image]: http://img.shields.io/npm/v/hll.svg
+[npm-url]: https://www.npmjs.com/package/hll
