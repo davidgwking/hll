@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+/*eslint-disable*/
+
+var init = require('./init');
+var config = init();
+
+var io = require('./io');
+var suiteMap = require('./suites');
+var punits = require('pretty-units');
+
+var suites = config.suites || suiteMap._keys;
+io.info('Running the following benchmark suites: %s', suites.join(', '));
+suites.forEach(function (name) {
+  if (!suiteMap[name]) {
+    io.suiteNotFound(name);
+    return;
+  }
+
+  // initialize suite(s)
+  io.startSuite(name);
+  var Benchmark = require('benchmark');
+  var suite = new Benchmark.Suite();
+
+  // add suite's benchmarks
+  var benchmarks = suiteMap[name];
+  benchmarks.forEach(suite.add.bind(suite));
+
+  // add listeners
+  suite
+    .on('error', function (event) {
+      io.error('[%s] an error occurred while running benchmark', event.target.name);
+      throw event.target.error;
+    })
+    .on('cycle', function (event) { // called between running benchmarks
+      var target = event.target;
+      var meanDuration = event.target.stats.mean;
+      io.info('%s - %ss/op', target.toString(), punits(meanDuration));
+    })
+    .on('complete', function () {
+      io.info('Fastest is ' + this.filter('fastest').pluck('name'));
+      io.info('Slowest is ' + this.filter('slowest').pluck('name'));
+    });
+
+  // start benchmarks
+  suite.run();
+});

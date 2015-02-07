@@ -22,9 +22,12 @@
     "murmurhash3": "^0.2.10"
   },
   "devDependencies": {
+    "benchmark": "^1.0.0",
     "chai": "^1.10.0",
     "eslint": "^0.13.0",
-    "mocha": "^2.0.1"
+    "minimist": "^1.1.0",
+    "mocha": "^2.0.1",
+    "pretty-units": "0.0.2"
   },
   "main": "./lib/hll.js",
   "engines": {
