@@ -19,7 +19,7 @@
     "url": "http://github.com/davidgwking/hll.git"
   },
   "dependencies": {
-    "murmurhash3": "^0.2.10"
+    "murmurhash3": "~0.3.4"
   },
   "devDependencies": {
     "benchmark": "^1.0.0",
