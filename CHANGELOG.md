@@ -1,3 +1,7 @@
+UNRELEASED
+==========================
+* add support for node 4
+
 1.0.0 / 2015-02-03
 ==========================
 * add support for customizable murmurhash3 digest sizes
