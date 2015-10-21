@@ -1,6 +1,6 @@
 {
   "name": "hll",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "a hyperloglog implementation",
   "license": "MIT",
   "author": "David King <davidgwking@gmail.com>",

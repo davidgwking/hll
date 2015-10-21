@@ -1,4 +1,4 @@
-UNRELEASED
+1.1.0 / 2015-10-20
 ==========================
 * add support for node 4
 
