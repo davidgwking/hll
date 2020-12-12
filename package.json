@@ -1,6 +1,6 @@
 {
   "name": "hll",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "description": "a hyperloglog implementation",
   "license": "MIT",
   "author": "David King <davidgwking@gmail.com>",
@@ -24,14 +24,14 @@
   "devDependencies": {
     "benchmark": "^1.0.0",
     "chai": "^1.10.0",
-    "eslint": "^0.13.0",
+    "eslint": "^1.10.3",
     "minimist": "^1.2.5",
     "mocha": "^8.0.1",
     "pretty-units": "0.0.2"
   },
   "main": "./lib/hll.js",
   "engines": {
-    "node": ">= 10.0"
+    "node": ">=10 <15"
   },
   "scripts": {
     "test": "eslint lib/**.js test/**.js && mocha"

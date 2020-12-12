@@ -10,17 +10,9 @@ addons:
       - g++-4.8
 language: node_js
 node_js:
-  - "0.10"
-  - "0.12"
-  - "4"
-  - "5"
   - "10"
   - "12"
   - "14"
-  - "15"
 matrix:
   fast_finish: true
-branches:
-  only:
-    - master
 script: "npm test"
